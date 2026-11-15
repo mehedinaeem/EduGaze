@@ -1,0 +1,302 @@
+[
+  {
+    "path": "third_party/GazeTrack-Education-Starter/GazeTrack-Education/analyze.py",
+    "lines": 179,
+    "imports": [
+      "PIL",
+      "argparse",
+      "json",
+      "matplotlib",
+      "matplotlib.patches",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scipy.ndimage"
+    ],
+    "definitions": [
+      "read_fixations",
+      "load_display_image",
+      "plot_image",
+      "main"
+    ]
+  },
+  {
+    "path": "third_party/GazeTrack-Education-Starter/GazeTrack-Education/make_demo.py",
+    "lines": 37,
+    "imports": [
+      "PIL",
+      "csv",
+      "numpy",
+      "pathlib"
+    ],
+    "definitions": []
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/dataset.py",
+    "lines": 73,
+    "imports": [
+      "irl_dcb.data",
+      "irl_dcb.utils",
+      "numpy"
+    ],
+    "definitions": [
+      "process_data"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/extract_DCBs_demo.py",
+    "lines": 56,
+    "imports": [
+      "PIL",
+      "detectron2",
+      "detectron2.config",
+      "detectron2.engine",
+      "detectron2.modeling",
+      "numpy",
+      "torch",
+      "torch.nn.functional"
+    ],
+    "definitions": [
+      "pred2feat",
+      "get_DCBs"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/builder.py",
+    "lines": 52,
+    "imports": [
+      "environment",
+      "models",
+      "torch",
+      "utils"
+    ],
+    "definitions": [
+      "build"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/config.py",
+    "lines": 117,
+    "imports": [
+      "datetime",
+      "json",
+      "os"
+    ],
+    "definitions": [
+      "JsonConfig"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/data.py",
+    "lines": 249,
+    "imports": [
+      "",
+      "numpy",
+      "os.path",
+      "scipy.ndimage",
+      "torch",
+      "torch.utils.data",
+      "torch.utils.data.sampler",
+      "warnings"
+    ],
+    "definitions": [
+      "RolloutStorage_New",
+      "LHF_IRL",
+      "LHF_Human_Gaze",
+      "RolloutStorage",
+      "FakeDataRollout"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/environment.py",
+    "lines": 187,
+    "imports": [
+      "torch",
+      "utils",
+      "warnings"
+    ],
+    "definitions": [
+      "IRL_Env4LHF"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/gail.py",
+    "lines": 153,
+    "imports": [
+      "torch",
+      "torch.nn.functional",
+      "torch.optim"
+    ],
+    "definitions": [
+      "GAIL"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/metrics.py",
+    "lines": 195,
+    "imports": [
+      "",
+      "multimatch",
+      "numpy"
+    ],
+    "definitions": [
+      "multimatch",
+      "compute_mm",
+      "scanpath2clusters",
+      "zero_one_similarity",
+      "nw_matching",
+      "compute_SS",
+      "get_seq_score",
+      "scanpath_ratio",
+      "compute_avgSPRatio",
+      "compute_cdf_auc",
+      "compute_prob_mismatch"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/models.py",
+    "lines": 108,
+    "imports": [
+      "torch",
+      "torch.nn",
+      "torch.nn.functional"
+    ],
+    "definitions": [
+      "LHF_Discriminator_Cond",
+      "LHF_Policy_Cond_Small"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/multimatch.py",
+    "lines": 1002,
+    "imports": [
+      "collections",
+      "math",
+      "numpy"
+    ],
+    "definitions": [
+      "cart2pol",
+      "calcangle",
+      "gen_scanpath_structure",
+      "keepsaccade",
+      "simlen",
+      "simdir",
+      "simplify_scanpath",
+      "cal_vectordifferences",
+      "createdirectedgraph",
+      "dijkstra",
+      "cal_angulardifference",
+      "cal_durationdifference",
+      "cal_lengthdifference",
+      "cal_positiondifference",
+      "cal_vectordifferencealongpath",
+      "getunnormalised",
+      "normaliseresults",
+      "docomparison"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/ppo.py",
+    "lines": 90,
+    "imports": [
+      "torch",
+      "torch.distributions",
+      "torch.optim"
+    ],
+    "definitions": [
+      "PPO"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/trainer.py",
+    "lines": 214,
+    "imports": [
+      "",
+      "data",
+      "datetime",
+      "gail",
+      "numpy",
+      "os",
+      "ppo",
+      "torch",
+      "torch.nn.functional",
+      "torch.utils.data",
+      "torch.utils.tensorboard"
+    ],
+    "definitions": [
+      "Trainer"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/irl_dcb/utils.py",
+    "lines": 480,
+    "imports": [
+      "copy",
+      "numpy",
+      "os",
+      "re",
+      "shutil",
+      "torch",
+      "torch.distributions",
+      "warnings"
+    ],
+    "definitions": [
+      "cutFixOnTarget",
+      "pos_to_action",
+      "action_to_pos",
+      "select_action",
+      "collect_trajs",
+      "compute_return_advantage",
+      "process_trajs",
+      "get_num_step2target",
+      "get_CDF",
+      "get_num_steps",
+      "get_mean_cdf",
+      "compute_search_cdf",
+      "calc_overlap_ratio",
+      "foveal2mask",
+      "multi_hot_coding",
+      "actions2scanpaths",
+      "preprocess_fixations",
+      "_file_at_step",
+      "_file_best",
+      "save",
+      "load"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/plot_scanpath.py",
+    "lines": 130,
+    "imports": [
+      "argparse",
+      "json",
+      "matplotlib.image",
+      "matplotlib.patches",
+      "matplotlib.pyplot",
+      "numpy",
+      "os.path"
+    ],
+    "definitions": [
+      "convert_coordinate",
+      "plot_scanpath",
+      "parse_args"
+    ]
+  },
+  {
+    "path": "third_party/Scanpath_Prediction-master/Scanpath_Prediction-master/train.py",
+    "lines": 59,
+    "imports": [
+      "dataset",
+      "docopt",
+      "irl_dcb.builder",
+      "irl_dcb.config",
+      "irl_dcb.trainer",
+      "json",
+      "numpy",
+      "os.path",
+      "torch"
+    ],
+    "definitions": []
+  }
+]

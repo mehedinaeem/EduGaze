@@ -1,0 +1,17 @@
+[
+  {
+    "path": "Dataset/GazeTrack-Education-Starter.zip",
+    "bytes": 534513,
+    "sha256": "2b5a6a9583d22b3fbeacae3cccdfc81eae072116fbf0f1fde62c8c2573b90a66"
+  },
+  {
+    "path": "Dataset/Scanpath_Prediction-master.zip",
+    "bytes": 32411181,
+    "sha256": "b4f80579b8949eefd18c0735d869bb6beb51016432a6f7c12380cf5c06ece380"
+  },
+  {
+    "path": "Dataset/readme.txt",
+    "bytes": 2222,
+    "sha256": "9812cd3b36c98d08de0bfccf472b18e801e5a9d824c5aa347b5fb5fd71b0122e"
+  }
+]

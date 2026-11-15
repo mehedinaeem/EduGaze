@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edugaze"
+version = "0.1.0"
+description = "An eye-tracking-based visual attention research framework for educational diagrams"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+edugaze = "edugaze.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

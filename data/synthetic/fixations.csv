@@ -1,0 +1,4 @@
+image_name,participant_id,x,y,duration_ms
+synthetic_diagram.png,synthetic_01,20,30,120
+synthetic_diagram.png,synthetic_01,70,40,180
+synthetic_diagram.png,synthetic_02,50,60,150

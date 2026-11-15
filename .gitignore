@@ -1,0 +1,28 @@
+# Environments and Python build artifacts
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+# Local research inputs and derived results
+Dataset/*
+third_party/*
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+outputs/**
+!outputs/figures/
+!outputs/figures/.gitkeep
+# Secrets and OS files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
