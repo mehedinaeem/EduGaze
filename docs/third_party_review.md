@@ -1,5 +1,8 @@
 # Third-party review
 
+Historical Phase 1 record. For the current real dataset integration, see
+[Phase 2](coco_freeview.md).
+
 Review scope: files supplied inside the two local ZIP archives. No external dataset
 was downloaded and no third-party code or model checkpoint was executed.
 

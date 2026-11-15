@@ -2,15 +2,16 @@
 
 **EduGaze: An Eye-Tracking-Based Visual Attention Analysis Framework for Improving Educational Diagrams.**
 
-This repository currently provides the research foundation: a modular Python package,
-strict fixation CSV validation, separated data storage, provenance records, and automated
-tests. Full attention analysis, visualization, prediction, and educational evaluation
-are reserved for later phases. Gaze measurements alone do not establish comprehension.
+This repository provides a modular Python package, strict CSV validation, a recorded
+COCO-FreeView JSON loader, exact photograph matching, explicit coordinate registration,
+normalized CSV export, provenance records, and automated tests. Full attention analysis,
+prediction, and educational evaluation remain reserved for later phases. Gaze measurements alone do not establish comprehension.
 
 ```text
 EduGaze/
-├── src/edugaze/          # Fixation schema, CSV validation, paths and CLI
-├── tests/               # Standard-library automated tests
+├── src/edugaze/          # Validation, dataset loaders, registration, export and CLI
+├── tests/               # unittest: parser, alignment and real local data
+├── tools/               # Official acquisition and real-data verification
 ├── configs/             # Future experiment configurations
 ├── data/
 │   ├── raw/             # Unmodified measurements and stimuli (local only)
@@ -27,7 +28,8 @@ EduGaze/
 ├── .venv/               # Linux runtime plus preserved Windows environment files
 ├── pyproject.toml
 ├── requirements.txt
-└── requirements-research.txt
+├── requirements-research.txt
+└── requirements-tested.txt
 ```
 
 ## Setup and checks
@@ -42,16 +44,17 @@ python -m unittest discover -s tests -v
 python -m edugaze validate data/synthetic/fixations.csv --width 100 --height 100
 ```
 
-Offline setup on this host used the bundled setuptools wheel:
+The Phase 1 bootstrap used the bundled setuptools wheel. With Phase 2 core
+dependencies already installed, the local package can also be reinstalled offline:
 
 ```bash
 python -m pip install --no-index /usr/share/python-wheels/setuptools-78.1.1-py3-none-any.whl
 python -m pip install --no-index --no-build-isolation -r requirements.txt
 ```
 
-Optional scientific and notebook packages can be installed with
-`python -m pip install -r requirements-research.txt`. These are not required by the
-foundation. The old Windows dependency freeze is preserved in `legacy/`.
+NumPy, Pandas and headless OpenCV are core dependencies installed by
+`requirements.txt`. Optional plotting and notebook packages can be installed with
+`python -m pip install -r requirements-research.txt`. The old Windows dependency freeze is preserved in `legacy/`.
 
 CSV columns are `image_name,participant_id,x,y,duration_ms`. Coordinates must use
 the actual stimulus canvas in pixels, origin at top left; duration is milliseconds.
@@ -67,3 +70,20 @@ Original archives remain unchanged and are fingerprinted in `docs/archive_manife
 The existing Git history tracks Windows `.venv` files. They were deliberately left
 tracked to avoid destructive index changes; `.gitignore` prevents new environment files
 from being added but cannot untrack old files. No commits or staging were performed.
+
+## Phase 2: real COCO-FreeView data
+
+See [the dataset integration guide](docs/coco_freeview.md) for verified official
+links, actual schema, destinations, alignment rules and acquisition details.
+
+```bash
+python -m edugaze coco data/raw/coco_freeview/fixations/COCOFreeView_fixations_trainval.json \
+  --images data/raw/coco_freeview/images --image 000000128398.jpg --participant 101
+python tools/verify_coco_freeview.py --image 000000128398.jpg --out outputs/coco_freeview_new_check
+```
+
+The verification tool exports all recorded fixations for the selected photograph,
+plus an overlay of one participant's single recorded scanpath. Use a new output
+directory on each run to preserve existing results. The canonical CSV command
+(`edugaze validate`) is separate from the richer dataset export, which includes
+source indexes, display/image/normalized coordinates and validity flags.

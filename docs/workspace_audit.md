@@ -1,5 +1,8 @@
 # Workspace audit — 2026-11-15
 
+Historical Phase 1 record. For the current real dataset integration, see
+[Phase 2](coco_freeview.md).
+
 Initial Git state: only `Dataset/` was untracked; no existing tracked edits were present.
 The repository already tracked a Windows Python 3.11.9 virtual environment (about 514 MB),
 a King County housing CSV, an EDA notebook, a generic housing README, a large frozen

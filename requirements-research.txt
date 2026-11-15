@@ -1,4 +1,4 @@
-# Optional scientific and notebook tools; not required for foundation tests.
+# Optional plotting and notebook tools; core loader dependencies are in pyproject.toml.
 numpy>=1.24,<3
 pandas>=2.0,<4
 matplotlib>=3.7,<4

@@ -1,0 +1,7 @@
+# Dataset integration versions verified with Linux Python 3.14.4.
+# Install with: python -m pip install -r requirements-tested.txt -r requirements.txt
+numpy==2.5.4
+pandas==3.1.1
+opencv-python-headless==5.0.0.93
+python-dateutil==4.0.0
+tzdata==2026.6

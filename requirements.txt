@@ -1,2 +1,2 @@
-# Install the local foundation. Tests use Python's standard-library unittest.
+# Core dataset loader dependencies are declared in pyproject.toml.
 -e .
