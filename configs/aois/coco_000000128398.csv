@@ -1,0 +1,5 @@
+aoi_id,name,x,y,width,height
+foreground,Foreground preparation area,350,360,1050,440
+background,Background preparation area,900,130,650,230
+bottle,Central bottle area,680,70,170,270
+left_context,Left background context,60,0,580,340

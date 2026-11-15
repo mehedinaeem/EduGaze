@@ -1,0 +1,2 @@
+# Optional browser QA; unit/AppTest coverage is available with core dependencies.
+playwright>=1.50,<2

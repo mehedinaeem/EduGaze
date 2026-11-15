@@ -7,7 +7,7 @@ name = "edugaze"
 version = "0.1.0"
 description = "An eye-tracking-based visual attention research framework for educational diagrams"
 requires-python = ">=3.10"
-dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<4", "opencv-python-headless>=4.10,<6", "matplotlib>=3.7,<4"]
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<4", "opencv-python-headless>=4.10,<6", "matplotlib>=3.7,<4", "streamlit>=1.51,<2", "plotly>=6,<7"]
 
 [project.scripts]
 edugaze = "edugaze.cli:main"

@@ -1,2 +1,2 @@
-# Core dataset loader and visualization dependencies are declared in pyproject.toml.
+# Core loader, visualization and dashboard dependencies are declared in pyproject.toml.
 -e .

@@ -1,0 +1,34 @@
+[
+  {
+    "aoi_id": "foreground",
+    "name": "Foreground preparation area",
+    "x": 350.0,
+    "y": 360.0,
+    "width": 1050.0,
+    "height": 440.0
+  },
+  {
+    "aoi_id": "background",
+    "name": "Background preparation area",
+    "x": 900.0,
+    "y": 130.0,
+    "width": 650.0,
+    "height": 230.0
+  },
+  {
+    "aoi_id": "bottle",
+    "name": "Central bottle area",
+    "x": 680.0,
+    "y": 70.0,
+    "width": 170.0,
+    "height": 270.0
+  },
+  {
+    "aoi_id": "left_context",
+    "name": "Left background context",
+    "x": 60.0,
+    "y": 0.0,
+    "width": 580.0,
+    "height": 340.0
+  }
+]

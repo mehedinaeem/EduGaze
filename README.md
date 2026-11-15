@@ -4,8 +4,9 @@
 
 This repository provides a modular Python package, strict CSV validation, a recorded
 COCO-FreeView JSON loader, exact photograph matching, explicit coordinate registration,
-normalized CSV export, recorded human-gaze scanpaths and heatmaps, provenance records,
-and automated tests. Prediction and educational evaluation remain reserved for later phases. Gaze measurements alone do not establish comprehension.
+normalized CSV export, recorded human-gaze scanpaths and heatmaps, gaze/AOI statistics, provenance records,
+and automated tests. A local Streamlit research dashboard integrates these modules.
+Prediction and educational evaluation remain reserved for later phases. Gaze measurements alone do not establish comprehension.
 
 ```text
 EduGaze/
@@ -103,3 +104,35 @@ python tools/visualize_coco_freeview.py --image 000000128398.jpg --participant 1
 The verified 300-DPI examples are in `outputs/human_gaze_visualization_publication/`.
 See [visualization methods and usage](docs/human_gaze_visualization.md) for weighting,
 normalization, coordinate conventions, parameters, output provenance and tests.
+
+## Phase 4: gaze statistics and rectangular AOIs
+
+`src/edugaze/analysis/` provides fixation/duration statistics, within-trial endpoint
+distances, spatial grid distributions, participant summaries, CSV/JSON AOI loading,
+AOI counts/durations/viewed flags and direct transitions. TTFF is computed only from
+actual onset timestamps and trial-start times; it is unavailable for COCO-FreeView.
+
+```bash
+python tools/analyze_coco_freeview.py --aois configs/aois/coco_000000128398.csv \
+  --out outputs/my_new_aoi_run --dpi 300
+```
+
+The real-data example, tables and charts are saved in `outputs/gaze_aoi_analysis/`.
+See [analysis methods and usage](docs/gaze_statistics_aoi.md) for boundary rules,
+missing-value handling, timing requirements, diagram reuse and result interpretation.
+
+## Phase 5: interactive research dashboard
+
+```bash
+source .venv/bin/activate
+python -m streamlit run streamlit_app.py
+```
+
+Open **http://127.0.0.1:8501**. Use the sidebar to select an image and participant,
+then explore recorded fixations, generate interactive scanpaths and heatmaps,
+inspect statistics, edit/upload rectangular AOIs, and download CSV/JSON/PNG/ZIP
+results. All scientific calculations use the existing validated modules.
+
+See [dashboard instructions](docs/research_dashboard.md) for configuration,
+missing-data behavior, research interpretation and the complete tested workflow.
+No machine learning has been added.
