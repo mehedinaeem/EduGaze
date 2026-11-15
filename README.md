@@ -4,8 +4,8 @@
 
 This repository provides a modular Python package, strict CSV validation, a recorded
 COCO-FreeView JSON loader, exact photograph matching, explicit coordinate registration,
-normalized CSV export, provenance records, and automated tests. Full attention analysis,
-prediction, and educational evaluation remain reserved for later phases. Gaze measurements alone do not establish comprehension.
+normalized CSV export, recorded human-gaze scanpaths and heatmaps, provenance records,
+and automated tests. Prediction and educational evaluation remain reserved for later phases. Gaze measurements alone do not establish comprehension.
 
 ```text
 EduGaze/
@@ -52,8 +52,8 @@ python -m pip install --no-index /usr/share/python-wheels/setuptools-78.1.1-py3-
 python -m pip install --no-index --no-build-isolation -r requirements.txt
 ```
 
-NumPy, Pandas and headless OpenCV are core dependencies installed by
-`requirements.txt`. Optional plotting and notebook packages can be installed with
+NumPy, Pandas, headless OpenCV and Matplotlib are core dependencies installed by
+`requirements.txt`. Optional additional scientific and notebook packages can be installed with
 `python -m pip install -r requirements-research.txt`. The old Windows dependency freeze is preserved in `legacy/`.
 
 CSV columns are `image_name,participant_id,x,y,duration_ms`. Coordinates must use
@@ -87,3 +87,19 @@ plus an overlay of one participant's single recorded scanpath. Use a new output
 directory on each run to preserve existing results. The canonical CSV command
 (`edugaze validate`) is separate from the richer dataset export, which includes
 source indexes, display/image/normalized coordinates and validity flags.
+
+## Phase 3: recorded human gaze visualization
+
+Two reusable modules under `src/edugaze/visualization/` create numbered single-trial
+scanpaths with duration tables and individual/pooled Gaussian heatmaps. Heatmaps
+support count and duration weighting, configurable smoothing and transparency.
+They describe measured fixations; they are not model predictions.
+
+```bash
+python tools/visualize_coco_freeview.py --image 000000128398.jpg --participant 101 \
+  --sigma 32 --alpha .65 --dpi 300 --out outputs/my_new_visualization_run
+```
+
+The verified 300-DPI examples are in `outputs/human_gaze_visualization_publication/`.
+See [visualization methods and usage](docs/human_gaze_visualization.md) for weighting,
+normalization, coordinate conventions, parameters, output provenance and tests.
